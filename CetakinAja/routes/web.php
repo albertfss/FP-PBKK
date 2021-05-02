@@ -19,6 +19,9 @@ use App\Http\Controllers\CourierController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/route', function () {
+    return view('viewroute');
+});
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     Route::get('/dashboard',[TasksController::class, 'index'])->name('dashboard');
