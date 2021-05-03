@@ -7,6 +7,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CourierController;
 use App\Http\Controllers\PrintingsController;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\ReviewController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,7 +31,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function(){
 
     Route::get('/task',[TasksController::class, 'add']);
     Route::post('/task',[TasksController::class, 'create']);
-   
+
     Route::get('/order',[OrderController::class, 'add']);
     Route::post('/order',[OrderController::class, 'create']);
 
@@ -42,13 +43,17 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function(){
 
     Route::get('/product',[ProductsController::class, 'add']);
     Route::post('/product',[ProductsController::class, 'create']);
-    
+
+    Route::get('/review', [ReviewController::class, 'add']);
+    Route::post('/review', [ReviewController::class, 'create']);
+
     Route::get('/task/{task}', [TasksController::class, 'edit']);
     Route::post('/task/{task}', [TasksController::class, 'update']);
-    
+
     Route::get('/list',[UserController::class,'show']);
     Route::get('/listorder',[OrderController::class,'show']);
     Route::get('/listcourier',[CourierController::class,'show']);
     Route::get('/listprinting',[PrintingsController::class,'show']);
     Route::get('/listproduct',[ProductsController::class,'show']);
+    Route::get('/listreview',[ReviewController::class,'show']);
 });

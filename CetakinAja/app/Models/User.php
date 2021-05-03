@@ -11,6 +11,7 @@ use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Task;
 use App\Models\Order;
+use App\Models\Review;
 class User extends Authenticatable
 {
     use HasApiTokens;
@@ -61,7 +62,7 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
-    
+
     public function tasks()
     {
     	return $this->hasMany(Task::class);
@@ -69,5 +70,9 @@ class User extends Authenticatable
     public function orders()
     {
     	return $this->hasMany(Order::class);
+    }
+    public function reviews()
+    {
+    	return $this->hasMany(Review::class);
     }
 }
