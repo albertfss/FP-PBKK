@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ProductsController extends Controller
@@ -24,7 +25,7 @@ class ProductsController extends Controller
    }
    function show(){
        
-       $data= Printing::all();
+       $data= Product::all();
        return view('viewproduct', ['products'=>$data]);
    }
 }

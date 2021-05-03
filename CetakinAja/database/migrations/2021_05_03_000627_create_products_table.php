@@ -14,12 +14,10 @@ class CreateProductsTable extends Migration
     public function up()
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->bigIncrements('Pr_id');
-            $table->bigIncrements('Printing_id');
+            $table->bigIncrements('Pr_id');;
             $table->string('Pr_nama');
             $table->string('Pr_satuan');
             $table->integer('Pr_harga');
-            $table->foreign('Printing_id')->references('P_id')->on('printings');
             $table->timestamps();
         });
     }
