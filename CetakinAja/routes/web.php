@@ -5,6 +5,7 @@ use App\Http\Controllers\TasksController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CourierController;
+use App\Http\Controllers\PrintingsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,6 +35,9 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function(){
 
     Route::get('/courier',[CourierController::class, 'add']);
     Route::post('/courier',[CourierController::class, 'create']);
+
+    Route::get('/printing',[PrintingsController::class, 'add']);
+    Route::post('/printing',[PrintingsController::class, 'create']);
     
     Route::get('/task/{task}', [TasksController::class, 'edit']);
     Route::post('/task/{task}', [TasksController::class, 'update']);
@@ -41,4 +45,5 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     Route::get('/list',[UserController::class,'show']);
     Route::get('/listorder',[OrderController::class,'show']);
     Route::get('/listcourier',[CourierController::class,'show']);
+    Route::get('/listprinting',[PrintingsController::class,'show']);
 });
