@@ -28,6 +28,7 @@
                 <div class="mt-4">
                     <x-jet-label for="Pr_satuan" value="{{ __('Satuan') }}" />
                     <x-jet-input id="Pr_satuan" class="block mt-1 w-full" type="text" name="Pr_satuan" :value="old('Pr_satuan')" required />
+                
                 </div>
                 
                 <div class="form-group">
