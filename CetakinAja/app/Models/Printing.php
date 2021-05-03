@@ -15,4 +15,9 @@ class Printing extends Model
         'P_alamat',
         'P_notelp',
     ];
+
+    public function products()
+    {
+    	return $this->hasMany(Product::class);
+    }
 }
